@@ -86,6 +86,7 @@ namespace BinaryTreesSample
       t = Insert(t, 80085);
       //PrintInOrder(t);
       Console.WriteLine(SearchElement(t, 68));
+  
     }
 
     static ITree<int> Insert(ITree<int> t, int v)

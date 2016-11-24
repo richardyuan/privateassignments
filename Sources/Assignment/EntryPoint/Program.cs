@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace EntryPoint
 {
 #if WINDOWS || LINUX
@@ -17,7 +18,7 @@ namespace EntryPoint
     [STAThread]
     static void Main()
     {
-      CrashMe(0);
+      //CrashMe(0);
 
       var fullscreen = false;
       read_input:
