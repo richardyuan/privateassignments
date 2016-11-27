@@ -10,13 +10,13 @@ namespace smallTasks
     {
         public static int[] cardDeck = { 5, 4, 3, 1, 2, 6 };
         
-        public static void sortMerge(int[] list, int low, int high)
+        public static void mergeSort(int[] list, int low, int high)
         {
             if (high > low)
             {
                 int middle = (high + low) / 2;
-                sortMerge(list, low, high);
-                sortMerge(list, (middle + 1), high);
+                mergeSort(list, low, high);
+                mergeSort(list, (middle + 1), high);
                 merge(list, low, middle, high);
             }
         }
@@ -88,17 +88,6 @@ namespace smallTasks
             }
             return list;
         }
-
-
-        public static int[] mergeSort(int[] list)
-        {
-
-
-
-            return list;
-        }
-
-
 
         static void Main(string[] args)
         {
