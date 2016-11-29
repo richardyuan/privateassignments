@@ -9,7 +9,6 @@ namespace EntryPoint
 #if WINDOWS || LINUX
   public static class Program
   {
-        //http://stackoverflow.com/questions/34698649/calculate-the-euclidean-distance-between-an-array-in-c-sharp-with-function
         [STAThread]
     static void Main()
     {
@@ -41,20 +40,9 @@ namespace EntryPoint
 
     private static IEnumerable<Vector2> SortSpecialBuildingsByDistance(Vector2 house, IEnumerable<Vector2> specialBuildings)
     {
-            List<double> list = new List<double>();
-
-
-            for (int i = 0; i < specialBuildings.Count(); i++)
-            {
-                double x = Math.Sqrt(Math.Pow(house.X - specialBuildings.ElementAt(i).X, 2) + Math.Pow((house.Y - specialBuildings.ElementAt(i).Y), 2));
-                list.Add(x);
-            }
-            
-            Merge.mergeSort(list.ToList(), 0, list.Count);
-
-           
-
-            return specialBuildings.OrderBy(v => Vector2.Distance(v, house));
+            List<Vector2> buildings = specialBuildings.ToList<Vector2>();
+            Merge.mergeSort(house, buildings, 0, buildings.Count - 1);
+            return buildings;
     }
 
     private static IEnumerable<IEnumerable<Vector2>> FindSpecialBuildingsWithinDistanceFromHouse(
