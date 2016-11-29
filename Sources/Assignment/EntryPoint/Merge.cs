@@ -7,19 +7,9 @@ using System.Threading.Tasks;
 
 namespace EntryPoint
 {
-    class Merge
+    public class Merge
     {
-
-        public static void euclidean(Vector2 house, IEnumerable<Vector2> specialBuildings)
-        {
-
-            //Math.Sqrt(Math.Pow(house.X - specialBuildings.X, 2) + Math.Pow(house.Y - specialBuildings.Y, 2));
-            
-        }
-        
-
-
-        public static void mergeSort(int[] list, int low, int high)
+        public static void mergeSort(List<double> list, int low, int high)
         {
             if (high > low)
             {
@@ -29,26 +19,12 @@ namespace EntryPoint
                 merge(list, low, middle, high);
             }
         }
-        // NEWWW
-        public static void newMergeSort(IEnumerable<Vector2> specialBuildings, int low, int high)
-        {
-            if (high > low)
-            {
-                int middle = (high + low) / 2;
-                newMergeSort(specialBuildings, low, high);
-                newMergeSort(specialBuildings, (middle + 1), high);
-                //newMerge(specialBuildings, low, middle, high);
-            }
-        }
-        //NEWWW
 
-
-
-        public static void merge(int[] list, int low, int middle, int high)
+        public static List<double> merge(List<double> list, int low, int middle, int high)
         {
             int L = low;
             int R = middle + 1;
-            int[] temp = new int[(high - low) + 1];
+            double[] temp = new double[(high - low) + 1];
             int tempIndex = 0;
 
             while ((L <= middle) && (R <= high))
@@ -90,7 +66,7 @@ namespace EntryPoint
             {
                 list[low + i] = temp[i];
             }
-
+            return list;
         }
     }
 }
