@@ -7,7 +7,7 @@ using System.Linq;
 namespace EntryPoint
 {
 #if WINDOWS || LINUX
-  public static class Program
+    public static class Program
   {
         [STAThread]
     static void Main()
