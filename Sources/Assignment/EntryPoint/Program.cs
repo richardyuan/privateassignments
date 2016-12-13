@@ -37,11 +37,11 @@ namespace EntryPoint
       }
       goto read_input;
     }
-
+        
     private static IEnumerable<Vector2> SortSpecialBuildingsByDistance(Vector2 house, IEnumerable<Vector2> specialBuildings)
     {
             List<Vector2> buildings = specialBuildings.ToList<Vector2>();
-            Merge.mergeSort(house, buildings, 0, buildings.Count - 1);
+            Assignment1.mergeSort(house, buildings, 0, buildings.Count - 1);
             return buildings;
     }
 

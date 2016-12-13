@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntryPoint
 {
-    public class Merge
+    public class Assignment1
     {
         public static void mergeSort(Vector2 house, List<Vector2> specialBuildings, int low, int high)
         {
@@ -32,6 +32,7 @@ namespace EntryPoint
             {
                 double distance_left = Math.Sqrt(Math.Pow(house.X - specialBuildings.ElementAt(low).X, 2) + Math.Pow((house.Y - specialBuildings.ElementAt(low).Y), 2)); // distance for item
                 double distance_right = Math.Sqrt(Math.Pow(house.X - specialBuildings.ElementAt(middle).X, 2) + Math.Pow((house.Y - specialBuildings.ElementAt(middle).Y), 2)); //distance for next item
+
                 if (distance_left < distance_right)
                 {
                     temp[tempIndex] = specialBuildings[low];

@@ -45,7 +45,8 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Merge.cs" />
+    <Compile Include="Assignment1.cs" />
+    <Compile Include="Assignment2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
