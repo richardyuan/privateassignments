@@ -113,7 +113,7 @@ namespace EntryPoint
 
         public bool InRange(Tuple<Vector2, float> house, Node node)
         {
-            double range = Euclidean(house.Item1, node.Vec2);
+            double range = Euclidean(node.Vec2, house.Item1);
             if (range < house.Item2)
             {
                 return true;
@@ -123,8 +123,5 @@ namespace EntryPoint
                 return false;
             }
         }
-
-       
-
     }
 }
