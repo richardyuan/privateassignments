@@ -49,12 +49,15 @@ namespace EntryPoint
       IEnumerable<Vector2> specialBuildings, 
       IEnumerable<Tuple<Vector2, float>> housesAndDistances)
     {
-      return
-          from h in housesAndDistances
-          select
-            from s in specialBuildings
-            where Vector2.Distance(h.Item1, s) <= h.Item2
-            select s;
+            Tree tree = new Tree(specialBuildings.ToArray());
+            return tree.Traverse(tree, housesAndDistances);
+
+          //        return
+          //      from h in housesAndDistances
+          //select
+          //  from s in specialBuildings
+          //  where Vector2.Distance(h.Item1, s) <= h.Item2
+          //  select s;
     }
 
     private static IEnumerable<Tuple<Vector2, Vector2>> FindRoute(Vector2 startingBuilding, 
